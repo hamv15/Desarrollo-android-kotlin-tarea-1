@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tarea.RegistroActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVertLeftContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVertRightContent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glTopContent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVertRightSetpBar"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVertLeftSetpBar"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <FrameLayout
+            android:id="@+id/barraTitulo"
+            app:layout_constraintCircleRadius="15dp"
+            android:background="@color/blue"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <TextView
+                android:text="@string/titulo_pagina"
+                android:gravity="center"
+                style="@style/titleTexView"
+                android:layout_gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/glTopContent"
+            app:layout_constraintStart_toStartOf="@id/glVertLeftContent"
+            app:layout_constraintEnd_toEndOf="@id/glVertRightContent">
+
+            <RelativeLayout
+                android:id="@+id/formDatosPersonales"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivUsuario"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:shapeAppearanceOverlay="@style/circleImageView"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:id="@+id/labelNombre"
+                    android:text="@string/label_nombres"
+                    style="@style/contentTexView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ivUsuario"/>
+                <EditText
+                    android:id="@+id/nombrePersonaRegisto"
+                    android:hint="@string/hint_nombre"
+                    style="@style/contentTexView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelNombre"
+                    android:inputType="text"
+                    android:autofillHints="" />
+
+                <TextView
+                    android:id="@+id/labelPrimerApellidoRegisto"
+                    android:text="@string/label_primer_apellido"
+                    android:layout_below="@+id/nombrePersonaRegisto"
+                    style="@style/contentTexView"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:id="@+id/primerApellidoPersonaRegisto"
+                    android:hint="@string/hint_prim_ape"
+                    style="@style/contentTexView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelPrimerApellidoRegisto"
+                    android:inputType="text"
+                    android:autofillHints="" />
+
+                <TextView
+                    android:id="@+id/labelSegundoApellidoRegisto"
+                    android:text="@string/label_segundo_apellido"
+                    android:layout_below="@+id/primerApellidoPersonaRegisto"
+                    style="@style/contentTexView"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/segundoApelidoPersonaRegisto"
+                    android:hint="@string/hint_seg_ape"
+                    style="@style/contentTexView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelSegundoApellidoRegisto"
+                    android:autofillHints=""
+                    android:inputType="text" />
+
+                <TextView
+                    android:id="@+id/labelGeneroRegisto"
+                    android:text="@string/labell_genero"
+                    style="@style/contentTexView"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/segundoApelidoPersonaRegisto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <RadioGroup
+                    android:id="@+id/generoPersonaRegisto"
+                    android:orientation="vertical"
+                    android:layout_below="@+id/labelGeneroRegisto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/rbGeneroFemenidoRegisto"
+                        android:text="@string/rb_femenino"
+                        style="@style/textRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rbGeneroMasculinoRegisto"
+                        style="@style/textRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rb_masculino" />
+                    <RadioButton
+                        android:id="@+id/rbGeneroNoEspecificaRegisto"
+                        style="@style/textRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rb_no_especificar" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/labelCorreo"
+                    android:text="@string/label_correo_electronico"
+                    style="@style/contentTexView"
+                    android:layout_below="@id/generoPersonaRegisto"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/etCorreoElectronico"
+                    android:layout_below="@+id/labelCorreo"
+                    android:hint="@string/hint_correo_electronico"
+                    style="@style/contentTexView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/labelPassword"
+                    android:text="Contraseña:"
+                    style="@style/contentTexView"
+                    android:layout_below="@+id/etCorreoElectronico"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:hint="Coloca tu contraseña"
+                    android:layout_below="@+id/labelPassword"
+                    style="@style/contentTexView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"/>
+                <TextView
+                    android:id="@+id/labelPasswordConfirm"
+                    android:text="Confirma contraseña:"
+                    style="@style/contentTexView"
+                    android:layout_below="@+id/etPassword"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:id="@+id/etPasswordConfirm"
+                    android:hint="Coloca tu contraseña"
+                    style="@style/contentTexView"
+                    android:layout_below="@+id/labelPasswordConfirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"/>
+
+
+                <Button
+                    android:id="@+id/btnNextRegPer"
+                    android:text="@string/textBtnRegistrarUsuario"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@+id/etPasswordConfirm"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
+

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tarea.ConfirmaRegistroActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVertLeftContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVertRightContent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glTopContent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVertRightSetpBar"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVertLeftSetpBar"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <FrameLayout
+            android:id="@+id/barraTitulo"
+            app:layout_constraintCircleRadius="15dp"
+            android:background="@color/blue"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <TextView
+                android:text="@string/label_titulo_confirmacion"
+                android:gravity="center"
+                style="@style/titleTexView"
+                android:layout_gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/glTopContent"
+            app:layout_constraintStart_toStartOf="@id/glVertLeftContent"
+            app:layout_constraintEnd_toEndOf="@id/glVertRightContent">
+
+            <RelativeLayout
+                android:id="@+id/formDatosPersonales"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivUsuario"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:shapeAppearanceOverlay="@style/circleImageView"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:id="@+id/labelExito"
+                    android:text="@string/label_mensaje_exito"
+                    style="@style/contentTexView"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ivUsuario"/>
+
+
+                <TextView
+                    android:id="@+id/contenidoRegistrado"
+                    android:text="Contenido cargado por el usuario"
+                    android:layout_below="@+id/labelExito"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
+

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CarroControl"
+        tools:targetApi="31">
+        <activity
+            android:name=".tarea.ConfirmaRegistroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tarea.RegistroActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ejercicio2.ejercicio2Activity"
+            android:exported="true"/>
+        <activity
+            android:name=".componentesgraficos.recyclerview.RecyclerViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".componentesgraficos.ComponentSelectionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".componentesgraficos.ConstraintLayoutMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".componentesgraficos.RelativeLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".componentesgraficos.LinearLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".componentesgraficos.FrameLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".intent.IntentReceiveExtrasActivity"
+            android:exported="true" />
+        <activity
+            android:name=".intent.IntentSendExtrasActivity"
+            android:exported="true" />
+        <activity
+            android:name=".intent.IntentImplActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

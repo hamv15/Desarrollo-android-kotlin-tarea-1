@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ejercicio2.ejercicio2Activity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVertLeftContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVertRightContent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glTopSetpBar"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glTopContent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVertRightSetpBar"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVertLeftSetpBar"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <FrameLayout
+            android:id="@+id/barraTitulo"
+            app:layout_constraintCircleRadius="15dp"
+            android:background="@color/blue"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <TextView
+                android:text="@string/titulo_pagina"
+                android:gravity="center"
+                style="@style/titleTexView"
+                android:layout_gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/setpBar"
+            android:orientation="horizontal"
+            app:layout_constraintCircleRadius="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/glTopSetpBar"
+            app:layout_constraintStart_toStartOf="@+id/glVertLeftSetpBar"
+            app:layout_constraintEnd_toEndOf="@id/glVertRightSetpBar"
+            app:circularflow_radiusInDP="30dp"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            app:layout_marginBaseline="@dimen/cardview_default_radius"
+            >
+            <TextView
+                android:text="@string/setp_bar_persona"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                style="@style/activeTexView"
+                android:background="@color/blue"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                />
+            <TextView
+                android:text="@string/setp_bar_auto"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                style="@style/inactiveTexView"
+                android:layout_height="match_parent"
+                />
+            <TextView
+                android:text="@string/set_bar_fin"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                style="@style/inactiveTexView"
+                android:layout_height="match_parent"
+                />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/glTopContent"
+            app:layout_constraintStart_toStartOf="@id/glVertLeftContent"
+            app:layout_constraintEnd_toEndOf="@id/glVertRightContent">
+
+            <RelativeLayout
+                android:id="@+id/formDatosPersonales"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivUsuario"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:shapeAppearanceOverlay="@style/circleImageView"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:id="@+id/labelNombre"
+                    android:text="@string/label_nombres"
+                    style="@style/contentTexView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ivUsuario"/>
+                <EditText
+                    android:id="@+id/nombrePersona"
+                    android:hint="@string/hint_nombre"
+                    style="@style/contentTexView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelNombre"
+                    android:inputType="text"
+                    android:autofillHints="" />
+
+                <TextView
+                    android:id="@+id/labelPrimerApellido"
+                    android:text="@string/label_primer_apellido"
+                    android:layout_below="@+id/nombrePersona"
+                    style="@style/contentTexView"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:id="@+id/primerApelidoPersona"
+                    android:hint="@string/hint_prim_ape"
+                    style="@style/contentTexView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelPrimerApellido"
+                    android:inputType="text"
+                    android:autofillHints="" />
+
+                <TextView
+                    android:id="@+id/labelSegundoApellido"
+                    android:text="@string/label_segundo_apellido"
+                    android:layout_below="@+id/primerApelidoPersona"
+                    style="@style/contentTexView"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/segundoApelidoPersona"
+                    android:hint="@string/hint_seg_ape"
+                    style="@style/contentTexView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelSegundoApellido"
+                    android:autofillHints=""
+                    android:inputType="text" />
+
+                <TextView
+                    android:id="@+id/labelGenero"
+                    android:text="@string/labell_genero"
+                    style="@style/contentTexView"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/segundoApelidoPersona"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <RadioGroup
+                    android:id="@+id/generoPersona"
+                    android:orientation="vertical"
+                    android:layout_below="@+id/labelGenero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/rbGeneroFemenido"
+                        android:text="@string/rb_femenino"
+                        style="@style/textRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rbGeneroMasculino"
+                        style="@style/textRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rb_masculino" />
+                    <RadioButton
+                        android:id="@+id/rbGeneroNoEspecifica"
+                        style="@style/textRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rb_no_especificar" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/labelNacionalidad"
+                    android:text="@string/label_nacionalidad"
+                    style="@style/contentTexView"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/generoPersona"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <Spinner
+                    android:id="@+id/spinnerNacionalidad"
+                    android:layout_below="@+id/labelNacionalidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/labelSeleccionCarro"
+                    android:text="@string/label_select_auto"
+                    style="@style/contentTexView"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/spinnerNacionalidad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSeleccionaAuto"
+                    android:layout_below="@+id/labelSeleccionCarro"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"/>
+
+                <CheckBox
+                    android:id="@+id/cbAvisoPrivacidad"
+                    style="@style/textCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rvSeleccionaAuto"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/aviso_privacidad"
+                    android:layout_alignParentEnd="true"
+                    />
+
+                <Button
+                    android:id="@+id/btnNextRegPer"
+                    android:text="Siguiente"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@+id/cbAvisoPrivacidad"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
+
