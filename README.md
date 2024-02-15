@@ -17,6 +17,15 @@ Adicionalmente, se utilizan los siguientes elementos:
 - ✅ Button
 - ✅ RadioButton
 
+<img width="286" alt="Captura de pantalla 2024-02-15 a la(s) 1 17 34 a m" src="https://github.com/hamv15/Desarrollo-android-kotlin-tarea-1/assets/47130351/0f0f7c0e-d687-421f-9925-7c140e04273d">
+<img width="287" alt="Captura de pantalla 2024-02-15 a la(s) 1 17 45 a m" src="https://github.com/hamv15/Desarrollo-android-kotlin-tarea-1/assets/47130351/81702d60-da0f-4929-8b75-8e2e13533813">
+
+
+
+<img width="279" alt="Captura de pantalla 2024-02-15 a la(s) 1 17 52 a m" src="https://github.com/hamv15/Desarrollo-android-kotlin-tarea-1/assets/47130351/17bdd903-6874-4953-a331-029035d9fb64">
+
+<img width="281" alt="Captura de pantalla 2024-02-15 a la(s) 1 25 45 a m" src="https://github.com/hamv15/Desarrollo-android-kotlin-tarea-1/assets/47130351/17fa8c77-9531-415a-a934-693d9f8cd400">
+
 
 
 
